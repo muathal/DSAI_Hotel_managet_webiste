@@ -160,9 +160,22 @@ if st.session_state.role == "employee":
 
             if st.button("Add Room"):
                 try:
-                    employee.add_room(hotel, int(number), room_type, float(price))
-                    st.success("Room added")
-                    st.rerun()
+                    if (len(hotel.rooms) != 0):
+                        for room in hotel.rooms:
+                            if number == room.number:
+                                exist = True
+                                break
+                            else:
+                                exist = False
+
+                    else:
+                        exist = False
+                    if not exist:
+                        employee.add_room(hotel, int(number), room_type, float(price))
+                        st.success("Room added")
+                        st.rerun()
+                    else:
+                        st.error("room does exist")
                 except Exception as e:
                     st.error(f"Failed to add room: {e}")
 
@@ -320,4 +333,5 @@ elif st.session_state.role == "guest":
         elif menu == "Logout":
             st.session_state.guest = None
             st.session_state.role = None
+
             st.rerun()
