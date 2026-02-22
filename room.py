@@ -20,7 +20,8 @@ class Room:
                 return True
 
         # Return False if room is already full
-        return False
+        else:
+            return False
 
     def remove_guest(self, guest):  # Remove a guest from the room
 
@@ -34,3 +35,4 @@ class Room:
         # Return False if guest was not found
 
         return False
+
