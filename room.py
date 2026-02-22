@@ -12,10 +12,10 @@ class Room:
     def add_guest(self, guest):# Add a guest to the room
 
 
-        if len(self.guests) < 3:
+        if len(self.guests) < 1:
             self.guests.append(guest)
 
-            if len(self.guests) == 3:     # If room reaches 3 guests → mark as Full
+            if len(self.guests) == 1:     # If room reaches 3 guests → mark as Full
                 self.status = "Full"
                 return True
 
@@ -32,4 +32,5 @@ class Room:
             return True
 
         # Return False if guest was not found
+
         return False
