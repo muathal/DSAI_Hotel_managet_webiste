@@ -6,7 +6,7 @@ class Hotel:
         self.rooms = []
 
     def add_room(self, number, room_type, price):
-        self.rooms.append(Room(number, room_type, price)) #list of roons: assign it as object -composition relation-
+        self.rooms.append(Room(number, room_type, price)) #list of rooms: assign it as object -composition relation-
 
     def remove_room(self, room_number):
         self.rooms = [r for r in self.rooms if r.number != room_number] #give me new list with all rooms that its number != room_number
@@ -41,3 +41,4 @@ class Hotel:
                 if getattr(g, "phone", None) == phone:
                     return g, room
         return None, None
+
