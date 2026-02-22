@@ -59,7 +59,7 @@ def show_rooms(rooms):
                 - Type: `{r.room_type}`
                 - Price: `{r.price}`
                 - Status: `{r.status}`
-                - Guests: `{len(r.guests)}/3`
+                - Guests: `{len(r.guests)}/1`
                 """
             )
             st.divider()
@@ -190,7 +190,7 @@ if st.session_state.role == "employee":
                     c1, c2 = st.columns([4, 1])
                     c1.write(
                         f"Room {r.number} | {r.room_type} | {r.price} | "
-                        f"{r.status} | Guests: {len(r.guests)}/3"
+                        f"{r.status} | Guests: {len(r.guests)}/1"
                     )
                     if c2.button("Delete", key=f"del_{r.number}"):
                         try:
@@ -335,3 +335,4 @@ elif st.session_state.role == "guest":
             st.session_state.role = None
 
             st.rerun()
+
