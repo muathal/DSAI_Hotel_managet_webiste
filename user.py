@@ -9,7 +9,7 @@ class User:
 class Guest(User):
     def __init__(self, name, phone):
         super().__init__(name)
-        self.__phone = phone
+        self.phone = phone
         self.booking = None
 
 
@@ -24,4 +24,5 @@ class Employee(User):
         hotel.add_room(number, room_type, price)
 
     def remove_room(self, hotel, room_number):
+
         hotel.remove_room(room_number)
