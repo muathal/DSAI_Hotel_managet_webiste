@@ -19,7 +19,7 @@ class Room:
                 self.status = "Full"
             return True
 
-        # Return True if room is already full
+        # Return False if room is already full
         else:
             return False
 
@@ -35,6 +35,7 @@ class Room:
         # Return False if guest was not found
 
         return False
+
 
 
 
