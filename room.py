@@ -17,7 +17,7 @@ class Room:
 
             if len(self.guests) == 1:     # If room reaches 3 guests → mark as Full
                 self.status = "Full"
-                return True
+            return True
 
         # Return False if room is already full
         else:
@@ -35,4 +35,5 @@ class Room:
         # Return False if guest was not found
 
         return False
+
 
